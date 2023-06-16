@@ -1,0 +1,40 @@
+traccia 1 risultato :
+SELECT *
+FROM `students`
+WHERE year(`date_of_birth`) = '1990';
+
+traccia 2 risultato:
+SELECT * 
+FROM `courses`
+WHERE `cfu` > 10;
+
+traccia 3 risultato:
+SELECT * 
+FROM `students`
+WHERE `date_of_birth` <= '1992-06-16';
+
+traccia 4 risultato:
+SELECT * 
+FROM `courses`
+WHERE `period` = 'I semestre'
+AND `year` = 1;
+
+traccia 5 risultato:
+SELECT * 
+FROM `exams`
+WHERE `date` = '2020-06-20'
+AND `hour` >= '14:00:00';
+
+traccia 6 risultato:
+SELECT * 
+FROM `degrees`
+WHERE `level` = 'magistrale';
+
+traccia 7 risultato:
+SELECT COUNT(*)
+FROM `departments`;
+
+traccia 8 risultato:
+SELECT * 
+FROM `teachers`
+WHERE `phone` IS NULL;
