@@ -1,0 +1,19 @@
+traccia 1 risultato:
+SELECT COUNT(*) as `iscritti`, `enrolment_date`
+FROM `students`
+GROUP BY `enrolment_date`;
+
+traccia 2 risultato:
+SELECT COUNT(*) as `office_address`, `office_address`
+FROM `teachers`
+GROUP BY `office_address`;
+
+traccia 3 risultato:
+SELECT AVG(vote) 
+FROM `exam_student`
+GROUP BY `exam_id`;
+
+traccia 4 risultato:
+SELECT COUNT(*) as `corsi`, `department_id`
+FROM `degrees` 
+GROUP BY `department_id`;

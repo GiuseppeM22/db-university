@@ -1,0 +1,40 @@
+traccia 1 risultato:
+SELECT `students`.`name`, `students`.`surname`, `degrees`.name
+FROM `students`
+JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id`
+WHERE `degrees`.name = "Corso di Laurea in Economia";
+
+traccia 2 risultato:
+SELECT `level`, `departments`.`name`
+FROM `degrees`
+JOIN `departments` on `degrees`.`department_id` = `departments`.`id`
+WHERE `departments`.`name` = "Dipartimento di Neuroscienze";
+
+traccia 3 risultato:
+SELECT `course_id`, `teachers`.`id`, `teachers`.`name`, `teachers`.`surname` 
+FROM `course_teacher`
+JOIN `teachers` on `teacher_id` = `teachers`.`id`
+WHERE `teachers`.`id` = 44;
+
+traccia 4 risultato:
+SELECT `students`.`surname`, `students`.`name`, `degrees`.`name`, `degrees`.`department_id`
+FROM `students`
+JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id`;
+
+traccia 5 risultato:
+SELECT `courses`.`name` as "nome corso", `degrees`.`name` as "corso di laurea", `course_teacher`.`course_id` as "id insegnante", `teachers`.`name` as "nome insegnante"
+FROM `courses`
+JOIN `degrees` on `courses`.`degree_id` = `degrees`.`id`
+JOIN `course_teacher` on `courses`.`id` = `course_teacher`.`course_id`
+JOIN `teachers` ON `course_teacher`.`course_id` = `teachers`.`id`;
+
+traccia 6 risultato:
+SELECT DISTINCT `teachers`.`name`, `teachers`.`surname`
+FROM `teachers`
+JOIN `course_teacher` on `teachers`.`id` = `course_teacher`.`teacher_id`
+JOIN `courses` on `course_teacher`.`course_id` = `courses`.`id`
+JOIN `degrees` on `courses`.`degree_id` = `degrees`.`id`
+JOIN `departments` on `degrees`.`department_id` = `departments`.`id`
+WHERE `departments`.`name` = 'Dipartimento di Matematica';
+
+traccia 7 risultato:
