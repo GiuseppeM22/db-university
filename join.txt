@@ -8,7 +8,8 @@ traccia 2 risultato:
 SELECT `level`, `departments`.`name`
 FROM `degrees`
 JOIN `departments` on `degrees`.`department_id` = `departments`.`id`
-WHERE `departments`.`name` = "Dipartimento di Neuroscienze";
+WHERE `departments`.`name` = "Dipartimento di Neuroscienze"
+AND `degrees`.`level` = "magistrale";
 
 traccia 3 risultato:
 SELECT `course_id`, `teachers`.`id`, `teachers`.`name`, `teachers`.`surname` 
@@ -19,14 +20,15 @@ WHERE `teachers`.`id` = 44;
 traccia 4 risultato:
 SELECT `students`.`surname`, `students`.`name`, `degrees`.`name`, `degrees`.`department_id`
 FROM `students`
-JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id`;
+JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id`
+ORDER BY `students`.`surname`;
 
 traccia 5 risultato:
 SELECT `courses`.`name` as "nome corso", `degrees`.`name` as "corso di laurea", `course_teacher`.`course_id` as "id insegnante", `teachers`.`name` as "nome insegnante"
 FROM `courses`
 JOIN `degrees` on `courses`.`degree_id` = `degrees`.`id`
 JOIN `course_teacher` on `courses`.`id` = `course_teacher`.`course_id`
-JOIN `teachers` ON `course_teacher`.`course_id` = `teachers`.`id`;
+JOIN `teachers` ON `course_teacher`.`teachers_id` = `teachers`.`id`;
 
 traccia 6 risultato:
 SELECT DISTINCT `teachers`.`name`, `teachers`.`surname`
